@@ -1,0 +1,28 @@
+import requests
+
+# Parámetros
+access_token = "[{ACCESS_TOKEN}]"
+ruta_archivo = r"[{RUTA_ARCHIVO_LOCAL}]"  # Ej: C:\\Reportes\\MiArchivo.xlsx
+nombre_archivo = "[{NOMBRE_ARCHIVO_ONEDRIVE}]"  # Ej: MiArchivo.xlsx
+ruta_onedrive = "[{RUTA_ONEDRIVE}]"  # Ej: RPA/Logs/
+tipo_mime = "[{TIPO_MIME}]"  # Ej: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+# Construir URL
+url = f"https://graph.microsoft.com/v1.0/me/drive/root:/{ruta_onedrive}{nombre_archivo}:/content"
+
+# Leer el archivo
+with open(ruta_archivo, 'rb') as f:
+    archivo_binario = f.read()
+
+# Encabezados
+headers = {
+    "Authorization": f"Bearer {access_token}",
+    "Content-Type": tipo_mime
+}
+
+# Subida
+response = requests.put(url, headers=headers, data=archivo_binario)
+
+# Resultado
+print("Status:", response.status_code)
+print("Respuesta:", response.json() if response.content else "Subido correctamente sin contenido adicional.")
