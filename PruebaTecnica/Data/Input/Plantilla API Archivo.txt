@@ -1,3 +1,5 @@
+# NO MODIFICAR ESTA PLANTILLA
+
 import requests
 
 # Parámetros
