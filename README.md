@@ -3,6 +3,7 @@ Este proyecto, desarrollado en **PIX**, automatiza el procesamiento de productos
 
 ## ⚙️ Tecnologías utilizadas
 
+- **Python** - Ejecución de API
 - **PIX (Plataforma de Automatización)** – Ejecución del flujo automatizado.
 - **Microsoft Graph API** – Autenticación y subida de archivos a OneDrive.
 - **SQL Server** – Almacenamiento de los productos procesados.
@@ -80,6 +81,7 @@ https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize
 
 ## 📝 Requisitos
 
+- Python instalado con ruta habilitada al PATH
 - PIX instalado y configurado.
 - SQL Server Express con la base de datos `ProductosDB`.
 - Cuenta Microsoft y App registrada en Azure.
